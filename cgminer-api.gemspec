@@ -5,7 +5,7 @@ require 'cgminer/api/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'cgminer-api'
-  spec.version       = Cgminer::Api::VERSION
+  spec.version       = CGMiner::API::VERSION
   spec.authors       = ['Nick Veys']
   spec.email         = ['nick@codelever.com']
   spec.description   = %q{Ruby gem for interactive with cgminer RPC API}

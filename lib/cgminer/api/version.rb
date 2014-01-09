@@ -1,5 +1,5 @@
-module Cgminer
-  module Api
-    VERSION = "0.0.1"
+module CGMiner
+  module API
+    VERSION = '0.0.1'
   end
 end
