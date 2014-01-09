@@ -38,6 +38,8 @@ module CGMiner
         rescue JSON::ParserError => e
           raise RuntimeError, "Failed parsing response: #{e}"
         end
+      ensure
+        api.close unless api.nil?
       end
 
     end
