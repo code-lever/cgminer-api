@@ -36,9 +36,7 @@ module CGMiner
           reply = json[symbol.to_s.upcase]
           response = CGMiner::API::Response.new(status, reply)
         rescue JSON::ParserError => e
-          puts "Failed to parse JSON: #{e}"
-          puts "Results: #{results}"
-          {}
+          raise RuntimeError, "Failed parsing response: #{e}"
         end
       end
 
