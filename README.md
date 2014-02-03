@@ -20,9 +20,10 @@ Or install it yourself as:
 
     client = CGMiner::API::Client.new('localhost', 4028)
     client.version
-     => #<CGMiner::API::Response:0x000001011109c0
-       @status={"STATUS"=>"S", "When"=>1391460011, "Code"=>22, "Msg"=>"CGMiner versions", "Description"=>"cgminer 3.7.2"},
-       @body=[{"CGMiner"=>"3.7.2", "API"=>"1.32"}]>
+      => #<CGMiner::API::Response:0x000001011109c0
+           @status={"STATUS"=>"S", "When"=>1391460011, "Code"=>22,
+                    "Msg"=>"CGMiner versions", "Description"=>"cgminer 3.7.2"},
+           @body=[{"CGMiner"=>"3.7.2", "API"=>"1.32"}]>
 
 ## Contributing
 
