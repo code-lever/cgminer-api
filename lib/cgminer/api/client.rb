@@ -3,6 +3,10 @@ module CGMiner
 
     class Client
 
+      attr_reader :host
+
+      attr_reader :port
+
       def initialize(host, port)
         @host = host
         @port = port
