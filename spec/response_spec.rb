@@ -16,6 +16,8 @@ describe CGMiner::API::Response do
       EOF
     end
 
+    its(:raw) { should be_a(Hash) }
+
     its(:body) { should be_a(Array) }
 
     its(:status) { should be_a(Hash) }
@@ -33,6 +35,8 @@ describe CGMiner::API::Response do
 {"STATUS":[{"STATUS":"E","When":1391459330,"Code":14,"Msg":"Invalid command","Description":"cgminer 3.7.2"}],"id":1}
       EOF
     end
+
+    its(:raw) { should be_a(Hash) }
 
     its(:body) { should be_nil }
 

@@ -80,16 +80,11 @@ module CGMiner
       private
 
       def command(symbol, *parameters)
-        api = Net::Telnet::new('Host' => @host, 'Port' => @port)
-        results = api.cmd({ command: symbol.to_s, parameter: parameters.join(',') }.to_json)
-
-        begin
-          response = CGMiner::API::Response.new(symbol, JSON.parse(results))
-        rescue JSON::ParserError => e
-          raise RuntimeError, "Failed parsing response: #{e}"
-        end
+        telnet = Net::Telnet::new('Host' => @host, 'Port' => @port)
+        results = telnet.cmd({ command: symbol.to_s, parameter: parameters.join(',') }.to_json)
+        CGMiner::API::Response.new(symbol, results)
       ensure
-        api.close unless api.nil?
+        telnet.close unless telnet.nil?
       end
 
     end
