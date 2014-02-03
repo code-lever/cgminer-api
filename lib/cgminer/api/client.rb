@@ -80,10 +80,7 @@ module CGMiner
         results = api.cmd({ command: symbol.to_s, parameter: parameters.join(',') }.to_json)
 
         begin
-          json = JSON.parse(results)
-          status = json['STATUS'][0]
-          reply = json[symbol.to_s.upcase]
-          response = CGMiner::API::Response.new(status, reply)
+          response = CGMiner::API::Response.new(symbol, JSON.parse(results))
         rescue JSON::ParserError => e
           raise RuntimeError, "Failed parsing response: #{e}"
         end
